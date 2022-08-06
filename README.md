@@ -2,13 +2,13 @@
 Bug Bounty Hunting Tools Automation by Ahmad Raihan Prawira
 
 Tools i used in BBHT_hunt :
-- Subscraper
 - Subfinder
 - Github-Subdomains
+- uro
+- anew
 - httprobe
 - httpx
 - gau
-- naabu
 
 More tools will be added. Coming Soon.
 
