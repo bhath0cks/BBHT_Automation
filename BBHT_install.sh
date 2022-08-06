@@ -9,7 +9,7 @@ AMASS_VERSION=3.8.2
 
 
 echo "${RED} ######################################################### ${RESET}"
-echo "${RED} #                 TOOLS FOR BUG BOUNTY                  # ${RESET}"
+echo "${RED} #           INSTALLATION TOOLS FOR BUG BOUNTY          #  ${RESET}"
 echo "${RED} ######################################################### ${RESET}"
 logo(){
 echo "${BLUE}
@@ -772,6 +772,12 @@ cd ~/tools/impacket
 sudo pip3 install -r requirements.txt
 sudo pip3 install .
 echo "${BLUE} done${RESET}"
+echo ""
+
+echo "${BLUE} installing subscraper${RESET}"
+git clone https://github.com/m8sec/subscraper
+cd ~/tools/subscraper
+sudo python3 setup.py install
 echo ""
 sar 1 1 >/dev/null
 
