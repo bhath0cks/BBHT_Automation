@@ -54,7 +54,7 @@ echo "${YELLOW} [+] Performing Web Spidering ${RESET}"
 echo ""
 
 URLEndpoints(){
-cat ${Domain}_probed.txt | gau --fc 400-600 --verbose --o ${Domain}_gau.txt
+cat ${Domain}_probed.txt | gau --fc 400,402,404,405,406,408,422,429,500,501,502,503,504 --verbose --o ${Domain}_gau.txt
 cat ${Domain}_probed.txt | waybackurls | tee ${Domain}_wayback.txt
 cat ${Domain}_wayback.txt | anew ${Domain}_gau.txt
 cat ${Domain}_gau.txt | uro > final.txt
