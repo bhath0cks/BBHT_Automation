@@ -2,13 +2,17 @@
 Bug Bounty Hunting Tools Automation by Ahmad Raihan Prawira
 
 Tools i used in BBHT_hunt :
+- Subfinder
+- Amass
+- Assetfinder
 - Subscraper
 - Github-Subdomains
 - Uro
 - Anew
 - Httprobe
+- Httpx
 - Gau
-- Waybackurls
+- Arjun
 
 More tools will be added. Coming Soon.
 
