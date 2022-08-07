@@ -64,7 +64,7 @@ echo ""
 
 subdomain
 
-
+echo ""
 echo "${GREEN} ========================================================= ${RESET}"
 echo ""
 echo "${GREEN} -->              HUNTING COMPLETED                    <-- ${RESET}"
