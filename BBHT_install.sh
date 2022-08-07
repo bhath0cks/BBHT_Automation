@@ -644,7 +644,7 @@ echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing subfinder${RESET}"
-go install github.com/projectdiscovery/subfinder/cmd/subfinder@latest
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
