@@ -13,6 +13,7 @@ Tools i used in BBHT Hunting :
 - Httpx
 - Gau
 - Arjun
+- Dirsearch
 
 More tools will be added. Coming Soon.
 
