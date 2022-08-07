@@ -58,6 +58,8 @@ cat ${Domain}_gau.txt | uro > final.txt
 
 echo "${YELLOW} [?] Enter your target domain: "
 read Domain
+echo ""
+
 subdomain
 
 
