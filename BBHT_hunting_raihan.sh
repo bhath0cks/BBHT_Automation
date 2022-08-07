@@ -49,7 +49,7 @@ echo ""
 echo "${YELLOW} [+] Performing Subdomain Probe ${RESET}"
 echo ""
 
-cat ${Domain}.txt | httpx -o ${Domain}_probed.txt
+cat ${Domain}.txt | httpx | tee ${Domain}_probed.txt
 cat ${Domain}.txt | httprobe -p http:81 -p http:8008 -p https:8008 -p https:3001 -p http:8000 -p https:8000 -p http:8080 -p https:8080 -p https:8443 -p https:10000 -p -s -c 100 | tee ${Domain}_uncommon_probe.txt
 
 cat ${Domain}_probed.txt | anew ${Domain}_uncommon_probe.txt
