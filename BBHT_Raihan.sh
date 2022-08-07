@@ -39,7 +39,7 @@ echo ""
 echo "${YELLOW} [+] Performing Subdomain Probe ${RESET}"
 echo ""
 
-cat ${Domain}.txt | httpx -o ${Domain}_probed.txt
+cat ${Domain}.txt | httpx | tee ${Domain}_probed.txt
 }
 
 
