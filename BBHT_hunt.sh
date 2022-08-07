@@ -38,6 +38,7 @@ mv final.txt ${Domain}_final.txt
 # Subdomain Probing
 
 probing(){
+echo ""
 echo "${YELLOW} [+] Performing Subdomain Probe ${RESET}"
 echo ""
 
@@ -47,6 +48,7 @@ cat ${Domain}.txt | httprobe -p http:81 -p http:8008 -p https:8008 -p https:3001
 # URL Endpoint / Web Spidering
 
 URLEndpoints(){
+echo ""
 echo "${YELLOW} [+] Performing Web Spidering ${RESET}"
 echo ""
 
