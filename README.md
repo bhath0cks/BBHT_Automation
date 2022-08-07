@@ -1,7 +1,7 @@
 # BBHT_Automation
 Bug Bounty Hunting Tools Automation by Ahmad Raihan Prawira
 
-Tools i used in BBHT_hunt :
+Tools i used in BBHT Hunting :
 - Subfinder
 - Amass
 - Assetfinder
