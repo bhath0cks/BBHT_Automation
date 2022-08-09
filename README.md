@@ -7,8 +7,7 @@ Tools i used in BB for Hunting :
 - Assetfinder
 - Subscraper
 - Github-Subdomains
-- Uro
-- Anew
+- Gf-Pattern
 - Httprobe
 - Httpx
 - Gau
