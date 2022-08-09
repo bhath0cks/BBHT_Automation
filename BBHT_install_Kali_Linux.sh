@@ -784,6 +784,20 @@ echo "${BLUE} installing discat${RESET}"
 go install -v github.com/raihansmart/discat@latest
 echo "${BLUE} done${RESET}"
 echo ""
+
+# Installing anew
+echo "${BLUE} installing anew${RESET}"
+go install -v github.com/tomnomnom/anew@latest
+echo "${BLUE} done${RESET}"
+echo ""
+
+# Installing Uro
+echo "${BLUE} installing uro${RESET}"
+sudo pip3 install uro
+echo "${BLUE} done${RESET}"
+echo ""
+sar 1 1 >/dev/null
+
 sar 1 1 >/dev/null
 
 echo "${GREEN} use the command 'source ~/.zshrc' for the shell functions to work ${RESET}"
