@@ -1,6 +1,14 @@
 # BBHT_Automation
 Bug Bounty Hunting Tools Automation by Ahmad Raihan Prawira
 
+Pros and Cons of my BBHT_Script :
+1. Full_Reconaissance 
+[+] Better Output/Results
+[-] It takes much time 
+2. Simple_Reconnaisance 
+[+] Short Amount of time
+[-] Output / Results not as good as Full_Reconnaisance
+
 Tools i used in BB for Hunting :
 - Subfinder
 - Amass
