@@ -31,37 +31,31 @@ echo ""
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
-sudo add-apt-repository -y ppa:apt-fast/stable < /dev/null
-sudo echo debconf apt-fast/maxdownloads string 16 | debconf-set-selections
-sudo echo debconf apt-fast/dlflag boolean true | debconf-set-selections
-sudo echo debconf apt-fast/aptmanager string apt-get | debconf-set-selections
-sudo apt install -y apt-fast
-
-sudo apt-fast install -y apt-transport-https
-sudo apt-fast install -y libcurl4-openssl-dev
-sudo apt-fast install -y libssl-dev
-sudo apt-fast install -y jq
-sudo apt-fast install -y ruby-full
-sudo apt-fast install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-sudo apt-fast install -y build-essential libssl-dev libffi-dev python-dev
-sudo apt-fast install -y python-setuptools
-sudo apt-fast install -y libldns-dev
-sudo apt-fast install -y python3-pip
-sudo apt-fast install -y python-dnspython
-sudo apt-fast install -y git
-sudo apt-fast install -y npm
-sudo apt-fast install -y nmap phantomjs 
-sudo apt-fast install -y gem
-sudo apt-fast install -y perl 
-sudo apt-fast install -y parallel
+sudo apt-get install -y apt-transport-https
+sudo apt-get install -y libcurl4-openssl-dev
+sudo apt-get install -y libssl-dev
+sudo apt-get install -y jq
+sudo apt-get install -y ruby-full
+sudo apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
+sudo apt-get install -y python-setuptools
+sudo apt-get install -y libldns-dev
+sudo apt-get install -y python3-pip
+sudo apt-get install -y python-dnspython
+sudo apt-get install -y git
+sudo apt-get install -y npm
+sudo apt-get install -y nmap phantomjs 
+sudo apt-get install -y gem
+sudo apt-get install -y perl 
+sudo apt-get install -y parallel
 pip3 install jsbeautifier
 echo ""
 echo ""
 sar 1 1 >/dev/null
 
 #Setting shell functions/aliases
-echo "${GREEN} [+] Setting bash_profile aliases ${RESET}"
-curl https://raw.githubusercontent.com/unethicalnoob/aliases/master/bashprofile > ~/.bash_profile
+echo "${GREEN} [+] Setting zsh_profile aliases ${RESET}"
+curl https://raw.githubusercontent.com/unethicalnoob/aliases/master/bashprofile >> ~/.zshrc
 echo "${BLUE} If it doesn't work, set it manually ${RESET}"
 echo ""
 echo ""
@@ -74,11 +68,11 @@ if [ ! -f /usr/bin/go ];then
 	export GOROOT=$HOME/.go
 	export PATH=$GOROOT/bin:$PATH
 	export GOPATH=$HOME/go
-    echo 'export GOROOT=$HOME/.go' >> ~/.bash_profile
+    echo 'export GOROOT=$HOME/.go' >> ~/.zshrc
 	
-	echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-	echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile
-    source ~/.bash_profile 
+	echo 'export GOPATH=$HOME/go'	>> ~/.zshrc			
+	echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.zshrc
+    source ~/.zshrc
 else 
     echo "${BLUE} Golang is already installed${RESET}"
 fi
@@ -106,7 +100,7 @@ echo ""
 
 #install nmap
 echo "${BLUE} installing nmap${RESET}"
-sudo apt-fast install -y nmap
+sudo apt-get install -y nmap
 echo "${BLUE} done${RESET}"
 echo ""
 
@@ -118,7 +112,7 @@ echo ""
 
 #install sqlmap
 echo "${BLUE} installing sqlmap${RESET}"
-sudo apt-fast install sqlmap
+sudo apt-get install sqlmap
 echo "${BLUE} done${RESET}"
 echo ""
 
@@ -126,12 +120,12 @@ echo ""
 echo "${BLUE} downloading knockpy${RESET}"
 git clone https://github.com/guelfoweb/knock.git ~/tools/knockpy
 cd ~/tools/knockpy
-sudo python setup.py install
+sudo python3 setup.py install
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing knock2${RESET}"
-go install github.com/harleo/knockknock@latest
+go install -v github.com/harleo/knockknock@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
@@ -152,23 +146,25 @@ echo ""
 echo "${GREEN}#### Installing fuzzing tools ####${RESET}"
 #install gobuster
 echo "${BLUE} installing gobuster${RESET}"
-sudo go install -u github.com/OJ/gobuster@latest
+sudo go install -v github.com/OJ/gobuster@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 #install ffuf
 echo "${BLUE} installing ffuf${RESET}"
-go install github.com/ffuf/ffuf@latest
+go install -v github.com/ffuf/ffuf@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing dirsearch${RESET}"
 git clone https://github.com/maurosoria/dirsearch.git ~/tools/dirsearch
+cd ~/tools/dirsearch
+sudo python3 setup.py install
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing wfuzz${RESET}"
-sudo apt-fast install wfuzz
+sudo apt-get install wfuzz
 echo "${BLUE} done${RESET}"
 echo ""
 sar 1 1 >/dev/null
@@ -177,7 +173,7 @@ echo "${GREEN}#### Installing Domain Enum Tools ####${RESET}"
 
 #install aquatone
 echo "${BLUE} Installing Aquatone ${RESET}"
-go install github.com/michenriksen/aquatone@latest 
+go install -v github.com/michenriksen/aquatone@latest 
 echo "${BLUE} done ${RESET}"
 echo ""
 
@@ -212,7 +208,7 @@ echo ""
 
 #install subjack
 echo "${BLUE} installing subjack ${RESET}"
-go install github.com/haccer/subjack@latest
+go install -v github.com/haccer/subjack@latest
 echo "${BLUE} done ${RESET}"
 echo ""
 
@@ -224,7 +220,7 @@ echo "${BLUE} done ${RESET}"
 echo ""
 
 echo "${BLUE} installing Subover ${RESET}"
-go install github.com/Ice3man543/SubOver@latest
+go install -v github.com/Ice3man543/SubOver@latest
 echo "${BLUE} done ${RESET}"
 echo ""
 
@@ -250,7 +246,7 @@ echo "${BLUE} done ${RESET}"
 echo ""
 
 echo "${BLUE} installing another cors scanner${RESET}"
-go install github.com/Tanmay-N/CORS-Scanner@latest
+go install -v github.com/Tanmay-N/CORS-Scanner@latest
 echo "${BLUE} done${RESET}"
 echo ""
 sar 1 1 >/dev/null
@@ -539,7 +535,7 @@ echo ""
 
 #install subjs
 echo "${BLUE} installing subjs${RESET}"
-go install github.com/lc/subjs@latest
+go install -v github.com/lc/subjs@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
@@ -628,38 +624,38 @@ sar 1 1 >/dev/null
 echo "${GREEN}#### ProjectDiscovery Pinned Tools ####${RESET}"
 
 echo "${BLUE} installing naabu${RESET}"
-go install github.com/projectdiscovery/naabu/cmd/naabu@latest
+go install -v github.com/projectdiscovery/naabu/cmd/naabu@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 
 echo "${BLUE} installing dnsprobe${RESET}"
-go install github.com/projectdiscovery/dnsprobe@latest
+go install -v github.com/projectdiscovery/dnsprobe@latest
 echo  "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing nuclei${RESET}"
-go install github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing subfinder${RESET}"
-go install github.com/projectdiscovery/subfinder/cmd/subfinder@latest
+go install -v github.com/projectdiscovery/subfinder/cmd/subfinder@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing httpx${RESET}"
-go install github.com/projectdiscovery/httpx/cmd/httpx@latest
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing shuffledns${RESET}"
-go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
+go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing chaos-client${RESET}"
-go install github.com/projectdiscovery/chaos-client/cmd/chaos@latest
+go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest
 echo "${BLUE} done${RESET}"
 echo ""
 sar 1 1 >/dev/null
@@ -684,57 +680,57 @@ echo "${GREEN} #### Installing tomnomnom tools #### ${RESET}"
 echo "${GREEN}   check out his other tools as well  ${RESET}"
 
 echo "${BLUE} installing meg${RESET}"
-go install github.com/tomnomnom/meg@latest
+go install -v github.com/tomnomnom/meg@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing assetfinder${RESET}"
-go install github.com/tomnomnom/assetfinder@latest
+go install -v github.com/tomnomnom/assetfinder@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing waybackurls${RESET}"
-go install github.com/tomnomnom/waybackurls@latest
+go install -v github.com/tomnomnom/waybackurls@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing gf${RESET}"
-go install github.com/tomnomnom/gf@latest
+go install -v github.com/tomnomnom/gf@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing httprobe${RESET}"
-go install github.com/tomnomnom/httprobe@latest
+go install -v github.com/tomnomnom/httprobe@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing concurl${RESET}"
-go install github.com/tomnomnom/hacks/concurl@latest
+go install -v github.com/tomnomnom/hacks/concurl@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing unfurl${RESET}"
-go install github.com/tomnomnom/unfurl@latest
+go install -v github.com/tomnomnom/unfurl@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing anti-burl${RESET}"
-go install github.com/tomnomnom/hacks/anti-burl@latest
+go install -v github.com/tomnomnom/hacks/anti-burl@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing filter-resolved${RESET}"
-go install github.com/tomnomnom/hacks/filter-resolved@latest
+go install -v github.com/tomnomnom/hacks/filter-resolved@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing fff${RESET}"
-go install github.com/tomnomnom/fff@latest
+go install -v github.com/tomnomnom/fff@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing qsreplace${RESET}"
-go install github.com/tomnomnom/qsreplace@latest
+go install -v github.com/tomnomnom/qsreplace@latest
 echo "${BLUE} done${RESET}"
 echo ""
 sar 1 1 >/dev/null
@@ -743,17 +739,19 @@ echo "${GREEN} #### Other other Tools #### ${RESET}"
 
 echo "${BLUE} installing arjun${RESET}"
 git clone https://github.com/s0md3v/Arjun.git ~/tools/Arjun
+cd ~/tools/Arjun
+sudo python3 setup.py install
 echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing cf-check${RESET}"
-go install github.com/dwisiswant0/cf-check@latest
+go install -v github.com/dwisiswant0/cf-check@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
 
 echo "${BLUE} installing Urlprobe${RESET}"
-go install github.com/1ndianl33t/urlprobe@latest
+go install -v github.com/1ndianl33t/urlprobe@latest
 echo "${BLUE} done${RESET}"
 echo ""
 
@@ -775,12 +773,19 @@ echo "${BLUE} done${RESET}"
 echo ""
 
 echo "${BLUE} installing subscraper${RESET}"
-git clone https://github.com/m8sec/subscraper
+git clone https://github.com/m8sec/subscraper ~/tools/subscraper
 cd ~/tools/subscraper
 sudo python3 setup.py install
+echo "${BLUE} done${RESET}"
+echo ""
+
+# Notify via Discord Bot
+echo "${BLUE} installing discat${RESET}"
+go install -v github.com/raihansmart/discat@latest
+echo "${BLUE} done${RESET}"
 echo ""
 sar 1 1 >/dev/null
 
-echo "${GREEN} use the command 'source ~/.bash_profile' for the shell functions to work ${RESET}"
+echo "${GREEN} use the command 'source ~/.zshrc' for the shell functions to work ${RESET}"
 echo ""
 echo "${GREEN}                I AM JUST A SCRIPT-KIDDIE ;)                         ${RESET}"
