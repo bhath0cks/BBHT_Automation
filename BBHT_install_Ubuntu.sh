@@ -43,8 +43,8 @@ sudo apt install python3.10-lib2to3 -y
 sudo apt install python3.10-gdbm -y
 sudo apt install python3.10-tk -y
 wget https://bootstrap.pypa.io/get-pip.py
-python3.10 get-pip.py
-python3.10 -m pip install --upgrade pip
+sudo python3.10 get-pip.py
+sudo python3.10 -m pip install --upgrade pip
 
 sudo apt-get install -y apt-transport-https
 sudo apt-get install -y libcurl4-openssl-dev
