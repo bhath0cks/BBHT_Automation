@@ -5,7 +5,6 @@ Tools i used in BB for Hunting :
 - Subfinder
 - Amass
 - Assetfinder
-- Subscraper
 - Github-Subdomains
 - Gf-Pattern
 - Httprobe
