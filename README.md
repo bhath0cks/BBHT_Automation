@@ -11,9 +11,9 @@ Tools i used in BB for Hunting :
 - Httprobe
 - Httpx
 - Gau
-- Dirsearch
-
-More tools will be added. Coming Soon.
+- Altdns
+- Nuclei
+- Naabu
 
 For BBHT_install i'm took reference from :
 https://github.com/unethicalnoob/BBHTv2
