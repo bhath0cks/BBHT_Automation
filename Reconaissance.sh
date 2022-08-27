@@ -215,7 +215,7 @@ echo ""
 echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
 }
 
-read -p "${YELLOW} [?] Enter your target domain: " Domain
+read -p "${YELLOW} [?] Please Input your Target Domain: " Domain
 echo ""
 
 read -p "${YELLOW} [?] Please Input your Censys_ID Key: " Censys_ID_key
