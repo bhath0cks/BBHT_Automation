@@ -2,10 +2,10 @@
 Bug Bounty Hunting Tools Automation for Enumeration by Ahmad Raihan Prawira
 
 Tools I'm Using :
-- Uncover (Host Enumeration through Shodan / Censys)
+- Uncover (Host Enumeration through Shodan or Censys)
 - Subfinder (Subdomain Enumeration)
-- Httpx (Check wheter alive/dead subdomains)
-- Gau (Fetching Past / Known URL for finding URL Endpoints / Parameters)
+- Httpx (Checking wheter alive or dead subdomains)
+- Gau (Fetching Past or Known URL for finding URL Endpoints or Parameters)
 - Ffuf (Fuzzing)
 - Uro (Declutters URL Lists)
 - Dnsx (Finding Origin IP through subdomains via DNS Enumeration)
