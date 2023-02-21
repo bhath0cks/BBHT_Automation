@@ -1,7 +1,12 @@
-# BBHT_Automation
-Bug Bounty Hunting Tools Automation by Ahmad Raihan Prawira
+# BBHT_Automation for Enumeration
+Bug Bounty Hunting Tools Automation for Enumeration by Ahmad Raihan Prawira
 
-For BBHT_install i'm took reference from :
-https://github.com/unethicalnoob/BBHTv2
-
-Because in the link above it have an issue while installing the tools due to go get command is no longer supported by golang latest version
+Tools I'm Using :
+- Uncover (Host Enumeration through Shodan / Censys)
+- Subfinder (Subdomain Enumeration)
+- Httpx (Check wheter alive/dead subdomains)
+- Gau (Fetching Past / Known URL for finding URL Endpoints / Parameters)
+- Ffuf (Fuzzing)
+- Uro (Declutters URL Lists)
+- Dnsx (Finding Origin IP through subdomains via DNS Enumeration)
+- Gf and Gf Pattern (Finding Specific Vulnerabilities)
