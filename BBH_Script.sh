@@ -75,7 +75,7 @@ echo ""
 echo "${YELLOW} [!] URL Endpoint Enumeration is Starting ${RESET}"
 echo ""
 
-cat $output/${Domain}_Subdomain.txt | waybackurls $output/${Domain}_wayback.txt
+cat $output/${Domain}_Subdomain.txt | waybackurls | tee -a $output/${Domain}_wayback.txt
 
 echo ""
 cat $output/${Domain}_wayback.txt | uro > $output/${Domain}_final.txt
