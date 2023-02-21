@@ -75,10 +75,10 @@ echo ""
 echo "${YELLOW} [!] URL Endpoint Enumeration is Starting ${RESET}"
 echo ""
 
-cat $output/${Domain}_Subdomain.txt | gau --verbose --o $output/${Domain}_gau.txt
+cat $output/${Domain}_Subdomain.txt | waybackurls $output/${Domain}_wayback.txt
 
 echo ""
-cat $output/${Domain}_gau.txt | uro > $output/${Domain}_final.txt
+cat $output/${Domain}_wayback.txt | uro > $output/${Domain}_final.txt
 echo ""
 
 echo ""
@@ -167,11 +167,12 @@ if [ ! -d $output ];
 then
 	mkdir -p $output
 	subdomain
-
+	
 	gfpattern
 
 else
 	echo "${RED} [-] Directory already exists ${RESET}"
+
 fi
 
 echo ""
