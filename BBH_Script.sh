@@ -23,7 +23,8 @@ echo ""
 echo "${YELLOW} [!] Subdomain Enumeration and Probe is Starting ${RESET}"
 echo ""
  
-subfinder -d ${Domain} | httpx | tee $output/${Domain}_Subdomain.txt
+subfinder -d ${Domain} | httpx -mc 200 | tee $output/${Domain}_Subdomain_200.txt
+subfinder -d ${Domain} | httpx -mc 403 | tee $output/${Domain}_Subdomain_403.txt
 
 echo ""
 echo "${GREEN} [+] Subdomain Enumeration and Probe has been Completed ${RESET}"
@@ -31,6 +32,7 @@ echo ""
 echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
 
 HostEnumeration
+SubdomainPermutation
 OriginIP
 URLEndpoints
 }
@@ -39,31 +41,49 @@ URLEndpoints
 
 HostEnumeration(){
 echo ""
-echo "${YELLOW} [!] Host Enumeration is Starting ${RESET}"
+echo "${YELLOW} [!] Shodan or Censys Enumeration is Starting ${RESET}"
 echo ""
 
-uncover -shodan 'ssl.cert.subject.CN:"${Domain}" 200' -shodan-idb 'ssl.cert.subject.CN:"${Domain}" 200' -censys '${Domain}' | httpx | tee -a $output/${Domain}_Host_Enumeration.txt
+uncover -shodan 'ssl.cert.subject.CN:"${Domain}" 200' -shodan-idb 'ssl.cert.subject.CN:"${Domain}" 200' -censys '${Domain}' | httpx -mc 200 | tee -a $output/${Domain}_Host_Enumeration.txt
 
 echo ""
-echo "${GREEN} [+] Host Enumeration has been Completed ${RESET}"
+echo "${GREEN} [+] Shodan or Censys Enumereation has been Completed ${RESET}"
 echo ""
 echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
 }
-# Finding Origin IP of the Subdomains via DNS Enumeration
+
+# Perform Subdomain Permutations
+
+SubdomainPermutation(){
+echo ""
+echo "${YELLOW} [!] Subdomain Permutations is Starting ${RESET}"
+echo ""
+
+dnsgen -w /usr/share/wordlists/dns_gen_wordlists.txt $output/${Domain}_Subdomain_200.txt | tee -a $output/${Domain}_Subdomain_Permutations.txt
+
+echo ""
+echo "${GREEN} [+] Subdomain Permutations has been Completed ${RESET}"
+echo ""
+echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
+}
+
+# Finding Origin IP of the Subdomains via DNS Resolver
 
 OriginIP(){
 echo ""
-echo "${YELLOW} [!] DNS Enumeration is Starting ${RESET}"
+echo "${YELLOW} [!] DNS Resolution is Starting ${RESET}"
 echo ""
 
-cat $output/${Domain}_Subdomain.txt | dnsx -l $output/${Domain}_Subdomain.txt -a -resp-only | sort -u | tee -a $output/${Domain}_IP.txt
+cat $output/${Domain}_Subdomain_200.txt | dnsx -l $output/${Domain}_Subdomain_200.txt -a -resp-only | sort -u | tee -a $output/${Domain}_OriginIP_200.txt
+cat $output/${Domain}_Subdomain_403.txt | dnsx -l $output/${Domain}_Subdomain_403.txt -a -resp-only | sort -u | tee -a $output/${Domain}_OriginIP_403.txt
 
 echo ""
-for ip in $(cat $output/${Domain}_IP.txt);do echo $ip && ffuf -w $output/${Domain}_Subdomain.txt -u http://$ip -H "Host: FUZZ" -s -mc 200; done | tee -a $output/${Domain}_OriginIP_Final.txt
+for ip in $(cat $output/${Domain}_OriginIP_200.txt);do echo $ip && ffuf -w $output/${Domain}_Subdomain_200.txt -u http://$ip -H "Host: FUZZ" -s -mc 200; done | tee -a $output/${Domain}_OriginIP_200_Final.txt
+for ip in $(cat $output/${Domain}_OriginIP_403.txt);do echo $ip && ffuf -w $output/${Domain}_Subdomain_403.txt -u http://$ip -H "Host: FUZZ" -s -mc 200; done | tee -a $output/${Domain}_OriginIP_403_Final.txt
 echo ""
 
 echo ""
-echo "${GREEN} [+] DNS Enumeration has been Completed ${RESET}"
+echo "${GREEN} [+] DNS Resolution has been Completed ${RESET}"
 echo ""
 echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
 }
@@ -75,10 +95,10 @@ echo ""
 echo "${YELLOW} [!] URL Endpoint Enumeration is Starting ${RESET}"
 echo ""
 
-cat $output/${Domain}_Subdomain.txt | waybackurls | tee -a $output/${Domain}_wayback.txt
+cat $output/${Domain}_Subdomain_200.txt | gau | tee -a $output/${Domain}_gau.txt
 
 echo ""
-cat $output/${Domain}_wayback.txt | uro > $output/${Domain}_final.txt
+cat $output/${Domain}_gau.txt | uro > $output/${Domain}_final.txt
 echo ""
 
 echo ""
