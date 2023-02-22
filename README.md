@@ -1,5 +1,5 @@
-# BBHT_Automation for Enumeration
-Bug Bounty Hunting Tools Automation for Enumeration by Ahmad Raihan Prawira
+# BBHT_Automation for Recon
+Bug Bounty Hunting Tools Automation for Recon by Ahmad Raihan Prawira
 
 Tools I'm Using :
 - Uncover (Host Enumeration through Shodan or Censys)
