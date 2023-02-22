@@ -44,7 +44,7 @@ echo ""
 echo "${YELLOW} [!] Shodan or Censys Enumeration is Starting ${RESET}"
 echo ""
 
-uncover -shodan 'ssl.cert.subject.CN:"${Domain}" 200' -shodan-idb 'ssl.cert.subject.CN:"${Domain}" 200' -censys '${Domain}' | httpx -mc 200 | tee -a $output/${Domain}_Host_Enumeration.txt
+uncover -shodan 'ssl.cert.subject.CN:"${Domain}" 200' -shodan-idb 'ssl.cert.subject.CN:"${Domain}" 200' | httpx -mc 200 | tee -a $output/${Domain}_Host_Enumeration.txt
 
 echo ""
 echo "${GREEN} [+] Shodan or Censys Enumereation has been Completed ${RESET}"
@@ -59,7 +59,7 @@ echo ""
 echo "${YELLOW} [!] Subdomain Permutations is Starting ${RESET}"
 echo ""
 
-dnsgen -w /usr/share/wordlists/dns_gen_wordlists.txt $output/${Domain}_Subdomain_200.txt | tee -a $output/${Domain}_Subdomain_Permutations.txt
+dnsgen -w /usr/share/wordlists/best-dns-wordlist.txt $output/${Domain}_Subdomain_200.txt | tee -a $output/${Domain}_Subdomain_Permutations.txt
 
 echo ""
 echo "${GREEN} [+] Subdomain Permutations has been Completed ${RESET}"
@@ -75,11 +75,9 @@ echo "${YELLOW} [!] DNS Resolution is Starting ${RESET}"
 echo ""
 
 cat $output/${Domain}_Subdomain_200.txt | dnsx -l $output/${Domain}_Subdomain_200.txt -a -resp-only | sort -u | tee -a $output/${Domain}_OriginIP_200.txt
-cat $output/${Domain}_Subdomain_403.txt | dnsx -l $output/${Domain}_Subdomain_403.txt -a -resp-only | sort -u | tee -a $output/${Domain}_OriginIP_403.txt
 
 echo ""
 for ip in $(cat $output/${Domain}_OriginIP_200.txt);do echo $ip && ffuf -w $output/${Domain}_Subdomain_200.txt -u http://$ip -H "Host: FUZZ" -s -mc 200; done | tee -a $output/${Domain}_OriginIP_200_Final.txt
-for ip in $(cat $output/${Domain}_OriginIP_403.txt);do echo $ip && ffuf -w $output/${Domain}_Subdomain_403.txt -u http://$ip -H "Host: FUZZ" -s -mc 200; done | tee -a $output/${Domain}_OriginIP_403_Final.txt
 echo ""
 
 echo ""
