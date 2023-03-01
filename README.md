@@ -7,7 +7,12 @@ Tools I'm Using :
 - Dnsgen (Subdomain Permutations)
 - Httpx (Checking wheter alive or dead subdomains)
 - Gau (Fetching Past or Known URL for finding URL Endpoints or Parameters)
+- Subjs (Fetching JSfile link actively from the target)
+- LinkFinder (Finding Endpoints in JSFiles)
+- SecretFinder (Finding Secrets in the JSFiles)
 - Ffuf (Fuzzing)
 - Uro (Declutters URL Lists)
 - Dnsx (Finding Origin IP through subdomains via DNS Enumeration)
 - Gf and Gf Pattern (Finding Specific Vulnerabilities)
+
+Although this automation script is not perfect, i am open to receive any suggestions.
