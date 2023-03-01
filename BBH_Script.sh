@@ -87,6 +87,7 @@ echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
 # Recon the JavaScript File
 
 JavaScript(){
+
 # Gather JavaScript Files URL
 echo ""
 echo "${YELLOW} [!] Recon the JavaScript File is Starting ${RESET}"
@@ -102,13 +103,7 @@ cat $output/${Domain}_live_jsfile_links.txt | while read url; do python3 /home/k
 
 # Gather Secrets From JavaScript Files
 
-cat $output/${Domain}_live_jsfile_links.txt | while read url; do python3 //home/kali/Tools/SecretFinder/SecretFinder.py -i $url -o output_secret_js; done > $output/${Domain}_secrets_jsfile_links.txt
-
-# Collect Js Files For Manually Search
-mkdir $output/${Domain}/jsfiles 
-cp $output/${Domain}_live_jsfile_links.txt $output/${Domain}/jsfiles/hosts
-cd $output/${Domain}/jsfiles
-meg -d 1000 -v / 
+cat $output/${Domain}_live_jsfile_links.txt | while read url; do python3 /home/kali/Tools/SecretFinder/SecretFinder.py -i $url -o output_secret_js; done > $output/${Domain}_secrets_jsfile_links.txt
 
 echo ""
 echo "${GREEN} [+] Recon the JavaScript File has been Completed ${RESET}"
