@@ -6,7 +6,7 @@ Bug Bounty Hunting Tools Automation for Recon by Ahmad Raihan Prawira
 Tools I'm Using :
 - Subfinder (Subdomain Enumeration)
 - Goaltdns (Subdomain Permutations)
-- Puredns (DNS Resolver)
+- Shuffledns (DNS Resolver)
 - Httpx (Checking wheter alive or dead subdomains)
 - Gau, Katana, Gospider, Hakrawler (Crawling Subdomains)
 - SecretFinder (Finding Secrets in the JSFiles)
