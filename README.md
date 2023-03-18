@@ -13,6 +13,6 @@ Tools I'm Using :
 - Dnsx (Finding Origin IP through subdomains via DNS Enumeration)
 - Gfx and Gf Pattern (Finding Specific Vulnerabilities)
 
-UPDATE : Specific_Recon.sh only used if you already have the list of subdomains through chaos.projectdiscovery.io/#/.
+*UPDATE : Specific_Recon.sh only used if you already have the list of subdomains through chaos.projectdiscovery.io/#/.*
 
 Although this automation script is not perfect, i am open to receive any suggestions.
