@@ -1,6 +1,8 @@
 # BBHT_Automation for Recon
 Bug Bounty Hunting Tools Automation for Recon by Ahmad Raihan Prawira
 
+****UPDATE : Specific_Recon.sh only used if you already have the list of subdomains through chaos.projectdiscovery.io/#/.****
+
 Tools I'm Using :
 - Uncover (Host Enumeration through Shodan or Censys)
 - Subfinder (Subdomain Enumeration)
@@ -12,7 +14,5 @@ Tools I'm Using :
 - Ffuf (Fuzzing)
 - Dnsx (Finding Origin IP through subdomains via DNS Enumeration)
 - Gfx and Gf Pattern (Finding Specific Vulnerabilities)
-
-*UPDATE : Specific_Recon.sh only used if you already have the list of subdomains through chaos.projectdiscovery.io/#/.*
 
 Although this automation script is not perfect, i am open to receive any suggestions.
