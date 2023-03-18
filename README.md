@@ -8,7 +8,7 @@ Tools I'm Using :
 - Goaltdns (Subdomain Permutations)
 - Puredns (DNS Resolver)
 - Httpx (Checking wheter alive or dead subdomains)
-- Gau (Fetching Past or Known URL for finding URL Endpoints or Parameters)
+- Gau, Katana, Gospider, Hakrawler (Crawling Subdomains)
 - SecretFinder (Finding Secrets in the JSFiles)
 - Ffuf (Fuzzing)
 - Dnsx (Finding Origin IP through subdomains via DNS Enumeration / DNS Resolver)
