@@ -1,7 +1,7 @@
 # BBHT_Automation for Recon
 Bug Bounty Hunting Tools Automation for Recon by Ahmad Raihan Prawira
 
-****UPDATE : Specific_Recon.sh only used if you already have the list of subdomains through chaos.projectdiscovery.io/#/.****
+****UPDATE : Specific_Recon.sh only used if you already have the list of the domain through chaos.projectdiscovery.io.****
 
 Tools I'm Using :
 - Subfinder (Subdomain Enumeration)
