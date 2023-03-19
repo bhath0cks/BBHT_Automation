@@ -17,4 +17,7 @@ Tools I'm Using :
 - Dnsx (Finding Origin IP through subdomains via DNS Enumeration / DNS Resolver)
 - Gfx and Gf Pattern (Finding Specific Vulnerabilities)
 
+For little bit explanation about recon methodology or scripts you can refer the link below :
+- https://github.com/harsh-bothra/Bheem
+
 Although this automation script is not perfect, i am open to receive any suggestions.
