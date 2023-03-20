@@ -16,7 +16,7 @@ Tools I'm Using :
 - Gau, Katana, Gospider, Hakrawler (Crawling Subdomains)
 - SecretFinder (Finding Secrets in the JSFiles)
 - Ffuf (Fuzzing)
-- Dnsx (Finding Origin IP through subdomains via DNS Enumeration / DNS Resolver)
+- Dnsx (Finding Origin IP through subdomains)
 - Gfx and Gf Pattern (Finding Specific Vulnerabilities)
 
 For little bit explanation about recon methodology or scripts or Getting API Keys in Subdomain Enumeration you can refer the link below :
