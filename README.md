@@ -4,7 +4,7 @@ Bug Bounty Hunting Tools Automation for Recon by Ahmad Raihan Prawira
 ****UPDATE**** : 
 1. This automation script is specifically designed for ****MEDIUM SCOPE**** Only !!!
 2. ****Specific_Recon.sh**** only used if you already have the list of the domain through chaos.projectdiscovery.io
-3. Make sure to create ~/Documents/Notes/Subdomain directory first before using this automation scripts
+3. Make sure to create ~/Documents/Notes/Subdomain and ~/Documents/Notes/wordlists directory first before using this automation scripts
 
 **Recommended to use BBH_Script.sh for maximum Recon**
 
