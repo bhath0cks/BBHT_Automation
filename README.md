@@ -19,8 +19,10 @@ Tools I'm Using :
 - Dnsx (Finding Origin IP through subdomains)
 - Gfx and Gf Pattern (Finding Specific Vulnerabilities)
 
-For little bit explanation about recon methodology or scripts or Getting API Keys in Subdomain Enumeration you can refer the link below :
-- https://github.com/harsh-bothra/Bheem
-- https://muhdaffa.medium.com/maximizing-the-potential-of-the-subfinder-562fc7e7e9e4
+For little bit explanation about recon methodology or scripts or Getting API Keys in Subdomain Enumeration, etc you can refer the link below :
+- https://github.com/harsh-bothra/Bheem (Recon Methodology)
+- https://muhdaffa.medium.com/maximizing-the-potential-of-the-subfinder-562fc7e7e9e4 (Subfinder)
+- https://pentestbook.six2dez.com/others/web-checklist (Web Pentesting Checklist)
+- https://www.notion.so/Web-Application-Penetration-Testing-Checklist-baa90cb760664e3094c1cff299511858 (Web Pentesting Checklist)
 
 Although this automation script is not perfect, i am open to receive any suggestions.
