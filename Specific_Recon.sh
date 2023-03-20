@@ -23,7 +23,6 @@ echo "${YELLOW} [!] Checking Subdomain is Alive / Not !!! ${RESET}"
 echo ""
 
 httpx -l $output/${Domain}_final.txt -mc 200 -silent -nc -o $output/${Domain}_alive.txt
-httpx -l $output/${Domain}_final.txt -mc 301,302 -silent -nc -o $output/${Domain}_redirect.txt
 httpx -l $output/${Domain}_final.txt -mc 401,403 -silent -nc -o $output/${Domain}_forbidden.txt
 
 echo ""
