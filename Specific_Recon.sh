@@ -15,20 +15,6 @@ echo ""
 echo "${GREEN}             -->  TAKE A CUP OF COFFEE WHILE THIS TOOL IS DOING HUNTING FOR YOU     <-- ${RESET}"
 echo ""
 
-# Screenshot Fingerprinting
-WebScreenshot(){
-echo ""
-echo "${YELLOW} [!] Screenshot Fingerprinting is Starting ${RESET}"
-echo ""
-
-cat $output/${Domain}_Subdomain.txt | aquatone -ports xlarge -out ~/Documents/Notes/Subdomain/$Name/$Domain
-
-echo ""
-echo "${GREEN} [+] Screenshot Fingerprinting has been Completed ${RESET}"
-echo ""
-echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
-}
-
 # Check whether subdomain is alive or not
 
 AliveEnumeration(){
@@ -46,7 +32,7 @@ echo ""
 echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
 }
 
-# Finding Origin IP of the Subdomains via DNS Resolver
+# Finding Origin IP of the Subdomains
 
 OriginIP(){
 echo ""
@@ -191,7 +177,6 @@ if [ ! -d $output ];
 then
 	echo "${RED} [-] List of target to hunt has not been found yet, Please find the target from https://chaos.projectdiscovery.io/ ${RESET}"
 else
-	WebScreenshot
 	AliveEnumeration
 	OriginIP
 	Crawling_URL
