@@ -86,7 +86,7 @@ echo ""
 echo "${GREEN} [+] Results are saved in $output directory ${RESET}"
 }
 
-# Finding Origin IP of the Subdomains via DNS Resolver
+# Finding Origin IP of the Subdomains
 
 OriginIP(){
 echo ""
