@@ -8,7 +8,6 @@ Bug Bounty Hunting Tools Automation for Recon by Ahmad Raihan Prawira
 Tools I'm Using :
 - Subfinder combined with Multiple API Keys (Subdomain Enumeration)
 - Puredns (Subdomain Bruteforcing / DNS Resolver)
-- Aquatone (Screenshot Fingerprinting)
 - Ripgen (Subdomain Permutations)
 - Httpx (Checking wheter alive or dead subdomains)
 - Gau, Katana, Gospider, Hakrawler (Crawling Subdomains)
