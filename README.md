@@ -2,8 +2,9 @@
 Bug Bounty Hunting Tools Automation for Recon by Ahmad Raihan Prawira
 
 ****UPDATE**** : 
-1. This tool is specifically designed for ****MEDIUM SCOPE**** Only !!!
+1. These tools is specifically designed for ****MEDIUM SCOPE**** Only !!!
 2. ****Specific_Recon.sh**** only used if you already have the list of the domain through chaos.projectdiscovery.io
+3. Make sure to create ~/Documents/Notes/Subdomain directory first before using these tools
 
 Tools I'm Using :
 - Subfinder combined with Multiple API Keys (Subdomain Enumeration)
