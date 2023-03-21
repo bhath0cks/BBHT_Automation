@@ -23,7 +23,7 @@ echo ""
 echo "${YELLOW} [!] Subdomain Enumeration is Starting ${RESET}"
 echo ""
  
-subfinder -d ${Domain} -silent -nc -o -all -o $output/${Domain}_Subdomain_Enumeration.txt
+subfinder -d ${Domain} -silent -nc -all -o $output/${Domain}_Subdomain_Enumeration.txt
 
 echo ""
 echo "${GREEN} [+] Subdomain Enumeration has been Completed ${RESET}"
